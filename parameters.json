@@ -1,0 +1,8 @@
+{
+    "credential-type": "x509",
+    "x509": {
+      "key-length": 2048,
+      "validity": 365,
+      "validity-type": "DAYS"
+    }
+}

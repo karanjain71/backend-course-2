@@ -1,0 +1,9 @@
+LANDSCAPE: us10
+
+USE_AUTH_TOKEN: 'true'
+
+# Domain
+ROUTE_PATTERN: chalet
+ROUTER_SVC_ROUTE: chalet
+
+AUTH_SERVICE: chalet-xsuaa

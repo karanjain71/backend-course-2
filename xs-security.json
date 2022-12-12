@@ -1,0 +1,70 @@
+{
+  "xsappname": "chalet",
+  "oauth2-configuration": {
+    "credential-types": ["x509"]
+  },
+  "tenant-mode": "dedicated",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.ChaletUser",
+      "description": "User level permissions"
+    },
+    {
+      "name": "$XSAPPNAME.ChaletExecutor",
+      "description": "Edit permissions."
+    },
+    {
+      "name": "$XSAPPNAME.ChaletAdmin",
+      "description": "Super Admin permissions."
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "ChaletUser",
+      "description": "generated",
+      "scope-references": [
+        "$XSAPPNAME.ChaletUser"
+      ],
+      "attribute-references": []
+    },
+    {
+      "name": "ChaletExecutor",
+      "description": "Chalet Executor Powers",
+      "scope-references": [
+        "$XSAPPNAME.ChaletExecutor"
+      ],
+      "attribute-references": []
+    },
+    {
+      "name": "ChaletAdmin",
+      "description": "Chalet Admin Powers",
+      "scope-references": [
+        "$XSAPPNAME.ChaletAdmin"
+      ],
+      "attribute-references": []
+    }
+  ],
+  "role-collections": [
+    {
+      "name": "ChaletUser",
+      "description": "Chalet User Role",
+      "role-template-references": [
+        "$XSAPPNAME.ChaletUser"
+      ]
+    },
+    {
+      "name": "ChaletExecutor",
+      "description": "ChaletExecutor",
+      "role-template-references": [
+        "$XSAPPNAME.ChaletExecutor"
+      ]
+    },
+    {
+      "name": "ChaletAdmin",
+      "description": "ChaletAdmin",
+      "role-template-references": [
+        "$XSAPPNAME.ChaletAdmin"
+      ]
+    }
+  ]
+}

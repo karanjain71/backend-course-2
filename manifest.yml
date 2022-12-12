@@ -1,0 +1,14 @@
+---
+applications:
+  - name: chalet
+    path: app-router
+    instances: 1
+    buildpacks:
+      - nodejs_buildpack
+    memory: 128M
+    routes:
+      - route: ((ROUTER_SVC_ROUTE)).cfapps.((LANDSCAPE)).hana.ondemand.com
+    services:
+      - ((AUTH_SERVICE))
+    env:
+      TENANT_HOST_PATTERN: "^((ROUTE_PATTERN))(.*).cfapps.((LANDSCAPE)).hana.ondemand.com"

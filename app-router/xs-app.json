@@ -1,0 +1,45 @@
+{
+    "authenticationMethod": "route",
+    "compression": {
+      "minSize": 2048
+    },
+    "cors":[
+      {
+          "uriPattern": "(.*)",
+          "allowedMethods": [
+            "GET"
+          ],
+          "allowedOrigin": [
+            {
+              "host": "chalet.cfapps.us10.hana.ondemand.com",
+              "protocol": "https",
+              "port": 345
+            },
+            {
+              "host": "localhost",
+              "protocol": "http",
+              "port": 8080
+            }
+          ],
+          "maxAge": 3600,
+          "allowedHeaders": [
+            "Authorization",
+            "Content-Type",
+            "Access-Control-Allow-Origin"
+          ],
+          "allowedCredentials": true
+        }
+    ],
+    "routes": [
+      {
+        "source": "^/api/v1/user/currentUser$",
+        "target": "/currentUser",
+        "service": "sap-approuter-userapi"
+      },
+      {
+        "source": "^/(.*)$",
+        "target": "/$1",
+        "localDir": "dist"
+      }
+    ]
+  }
