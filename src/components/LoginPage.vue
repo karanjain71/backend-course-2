@@ -54,7 +54,7 @@
   </template>
 
 <script>
-
+import {postLogin} from "@/helpers/backend_helper"
   export default {
     name: "LoginPage",
     data: () => ({
@@ -66,7 +66,11 @@
     }),
 
     methods: {
-      submit () {
+       async submit () {
+        const response = await postLogin(this.email, this.password)
+        localStorage.setItem('token', response.token);
+
+        console.log(response)
       },
       clear () {
         this.email = ''

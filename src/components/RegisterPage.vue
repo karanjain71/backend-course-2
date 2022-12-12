@@ -11,9 +11,9 @@
         <v-container>
           <v-row>
             <v-text-field
-              v-model="username"
+              v-model="name"
               outlined
-              label="Username"
+              label="Name"
               required
             ></v-text-field>
           </v-row>
@@ -66,12 +66,13 @@
   </template>
 
 <script>
+  import {postRegister} from "@/helpers/backend_helper"
 
   export default {
     name: "RegisterPage",
     data: () => ({
       loading: false,
-      username: "",
+      name: "",
       email: "",
       password: "",
       about: "",
@@ -79,8 +80,15 @@
     }),
 
     methods: {
-      submit () {
-        console.log(this.email, this.password)
+      async submit () {
+        const payload = {
+          "name": this.name,
+          "email": this.email,
+          "password": this.password,
+          "about": this.about
+        }
+        const response = await postRegister(payload)
+        console.log(response)
       },
       clear () {
         this.email = ''

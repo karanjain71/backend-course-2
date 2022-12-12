@@ -1,12 +1,11 @@
 import axios from "axios"
-import consts from "./constants"
-import router from "@/router"
 
 const axiosApi = axios.create({
   baseURL: "http://locahost:8080",
 })
 
 axiosApi.defaults.headers.common["Content-Type"] = "application/json"
+
 
 
 // axiosApi.interceptors.request.use(

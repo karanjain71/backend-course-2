@@ -32,7 +32,7 @@
   </template>
 
 <script>
-
+  import {postForgotPassword} from "@/helpers/backend_helper"
   export default {
     name: "ForgotPassword",
     data: () => ({
@@ -40,7 +40,12 @@
     }),
 
     methods: {
-      submit () {
+      async submit () {
+        const payload = {
+          "email": this.email
+        }
+        const response = await postForgotPassword(payload)
+        console.log(response)
       },
     },
   }
