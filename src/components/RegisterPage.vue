@@ -46,10 +46,13 @@
               class="mr-4"
               @click="submit"
             >
-              submit
+              Register
             </v-btn>
-            <v-btn @click="clear">
-              clear
+            <v-btn
+              class="mr-4"
+              @click="registerWithGoogle"
+            >
+              Register with Google
             </v-btn>
           </v-row>
           <v-row>

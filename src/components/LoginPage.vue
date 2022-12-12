@@ -36,10 +36,10 @@
               class="mr-4"
               @click="submit"
             >
-              submit
+              Login
             </v-btn>
             <v-btn @click="clear">
-              clear
+              Login With Google
             </v-btn>
           </v-row>
           <v-row>
@@ -67,17 +67,14 @@
 
     methods: {
       submit () {
-        this.$v.$touch()
       },
       clear () {
-        this.$v.$reset()
         this.email = ''
         this.password = ''
         this.rememberMe = false
       },
 
       registerPage(){
-        console.log("here buddy")
         this.$router.push("/register")
       }
     },
