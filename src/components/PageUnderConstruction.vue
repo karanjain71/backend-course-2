@@ -17,7 +17,7 @@
 
 <script>
 
-import consts from '../helpers/constants.js';
+    import consts from '../helpers/constants.js';
 
     export default {
         name: "PageUnderConstruction",
